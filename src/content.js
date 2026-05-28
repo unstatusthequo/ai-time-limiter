@@ -67,15 +67,16 @@
       ? "Daily limit reached"
       : `${formatCompact(remainingSeconds)} left today`;
     refs.site.textContent = state.site?.label ?? state.site?.domain ?? "AI site";
-    refs.purposeText.textContent = state.currentPurpose || "No purpose set";
 
     if (
       state.settings.purposePromptEnabled &&
       !state.currentPurpose &&
       !state.exhausted
     ) {
+      refs.purposeText.textContent = "Set one below";
       refs.purpose.hidden = false;
     } else {
+      refs.purposeText.textContent = state.currentPurpose || "Not required";
       refs.purpose.hidden = true;
     }
 
@@ -345,6 +346,7 @@
     `;
 
     document.documentElement.append(root);
+    protectExtensionInputs(root.shadowRoot);
     refs = {
       blockMessage: root.shadowRoot.querySelector(".message"),
       blocker: root.shadowRoot.querySelector(".blocker"),
@@ -408,6 +410,44 @@
 
   function sendMessage(message) {
     return chrome.runtime.sendMessage(message);
+  }
+
+  function protectExtensionInputs(shadowRoot) {
+    const guardedEvents = [
+      "beforeinput",
+      "compositionend",
+      "compositionstart",
+      "compositionupdate",
+      "copy",
+      "cut",
+      "input",
+      "keydown",
+      "keypress",
+      "keyup",
+      "mousedown",
+      "paste",
+      "pointerdown",
+      "touchstart"
+    ];
+
+    for (const eventName of guardedEvents) {
+      shadowRoot.addEventListener(
+        eventName,
+        (event) => {
+          if (isExtensionEditable(event.target)) {
+            event.stopPropagation();
+          }
+        }
+      );
+    }
+  }
+
+  function isExtensionEditable(target) {
+    return (
+      target instanceof HTMLInputElement ||
+      target instanceof HTMLTextAreaElement ||
+      target?.isContentEditable
+    );
   }
 
   function formatClock(seconds) {
