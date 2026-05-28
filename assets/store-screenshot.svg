@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" role="img" aria-label="AI Time Limiter store screenshot">
+  <rect width="1280" height="800" fill="#fffcf5"/>
+  <text x="88" y="112" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="30" font-weight="800" fill="#8a5b24">AI Time Limiter</text>
+  <text x="88" y="182" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="64" font-weight="850" fill="#1f2937">Keep AI useful, not automatic.</text>
+  <rect x="88" y="260" width="470" height="330" rx="16" fill="#fffaf1" stroke="#e5d6bf"/>
+  <text x="124" y="326" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="22" font-weight="800" fill="#7a5630">Today</text>
+  <text x="124" y="410" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="72" font-weight="850" fill="#1f2937">23m left</text>
+  <rect x="124" y="470" width="360" height="20" rx="10" fill="#eadcc8"/>
+  <rect x="124" y="470" width="214" height="20" rx="10" fill="#8a5b24"/>
+  <text x="124" y="540" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="24" fill="#4b5563">Purpose: draft client email</text>
+  <rect x="638" y="260" width="554" height="330" rx="16" fill="#1f2937"/>
+  <text x="690" y="342" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="40" font-weight="850" fill="#fffaf1">Time to get back to real work</text>
+  <text x="690" y="410" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="24" fill="#f7c873">Daily AI time is used up.</text>
+  <rect x="690" y="468" width="170" height="52" rx="8" fill="#f7c873"/>
+  <text x="724" y="503" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="18" font-weight="800" fill="#1f2937">Grace time</text>
+  <text x="88" y="690" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="28" fill="#4b5563">Presets, weekly analytics, custom AI sites, work hours, and local-only privacy.</text>
+</svg>

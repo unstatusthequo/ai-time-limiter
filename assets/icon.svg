@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="AI Time Limiter icon">
+  <rect width="128" height="128" rx="24" fill="#fffaf1"/>
+  <circle cx="64" cy="64" r="42" fill="#1f2937"/>
+  <path d="M64 31a33 33 0 1 1 0 66 33 33 0 0 1 0-66Zm0 10a23 23 0 1 0 0 46 23 23 0 0 0 0-46Z" fill="#f7c873"/>
+  <path d="M64 47v19l15 9" fill="none" stroke="#fffaf1" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M31 104h66" stroke="#8a5b24" stroke-width="8" stroke-linecap="round"/>
+</svg>

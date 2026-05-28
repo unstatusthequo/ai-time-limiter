@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Time Limiter Settings</title>
+    <link rel="stylesheet" href="styles/options.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">Privacy-first AI time budget</p>
+        <h1>AI Time Limiter</h1>
+      </header>
+
+      <section class="intro" id="onboarding">
+        <div>
+          <h2>Start with a preset</h2>
+          <p>Choose a baseline, then tune the details below.</p>
+        </div>
+        <div class="preset-grid">
+          <button type="button" data-preset="light">Light use <span>60m/day</span></button>
+          <button type="button" data-preset="focus">Focus workday <span>30m/day</span></button>
+          <button type="button" data-preset="strict">Strict reset <span>15m/day</span></button>
+        </div>
+      </section>
+
+      <form id="settings-form">
+        <section>
+          <h2>Daily Budget</h2>
+          <div class="grid two">
+            <label>
+              <span>Default daily limit</span>
+              <input id="daily-limit" name="dailyLimitMinutes" type="number" min="1" max="720" step="1" required>
+              <small>Minutes per day when no day override is set.</small>
+            </label>
+
+            <label>
+              <span>Session alert</span>
+              <input id="session-alert" name="sessionAlertMinutes" type="number" min="1" max="240" step="1" required>
+              <small>Minutes on one AI page before a reminder.</small>
+            </label>
+          </div>
+
+          <label class="checkbox">
+            <input id="alert-enabled" name="alertEnabled" type="checkbox">
+            <span>Show session alert</span>
+          </label>
+        </section>
+
+        <section>
+          <h2>Day Limits</h2>
+          <div class="day-grid" id="day-limits"></div>
+        </section>
+
+        <section>
+          <h2>AI Sites</h2>
+          <div id="site-list" class="site-list"></div>
+          <div class="inline-add">
+            <input id="custom-domain" placeholder="custom-ai.example.com">
+            <button id="add-site" type="button" class="secondary">Add site</button>
+          </div>
+          <small>Custom domains are matched locally. No browsing data leaves this browser.</small>
+        </section>
+
+        <section>
+          <h2>Work Hours</h2>
+          <label class="checkbox">
+            <input id="work-hours-enabled" name="workHoursEnabled" type="checkbox">
+            <span>Only track and enforce during work hours</span>
+          </label>
+          <div class="grid two">
+            <label>
+              <span>Start</span>
+              <input id="work-start" type="time">
+            </label>
+            <label>
+              <span>End</span>
+              <input id="work-end" type="time">
+            </label>
+          </div>
+        </section>
+
+        <section>
+          <h2>Friction</h2>
+          <div class="grid two">
+            <label>
+              <span>Mode</span>
+              <select id="friction-mode">
+                <option value="soft">Soft: alert only</option>
+                <option value="normal">Normal: block at limit</option>
+                <option value="strict">Strict: require reason for grace</option>
+              </select>
+            </label>
+            <label>
+              <span>Grace minutes</span>
+              <input id="grace-minutes" type="number" min="0" max="60" step="1">
+            </label>
+            <label>
+              <span>Grace uses per day</span>
+              <input id="grace-uses" type="number" min="0" max="12" step="1">
+            </label>
+            <label>
+              <span>Focus redirect URL</span>
+              <input id="redirect-url" type="url" placeholder="https://todoist.com">
+            </label>
+          </div>
+
+          <label class="checkbox">
+            <input id="purpose-prompt-enabled" type="checkbox">
+            <span>Ask for a purpose before starting an AI session</span>
+          </label>
+
+          <label>
+            <span>Block message</span>
+            <textarea id="block-message" name="blockMessage" rows="4" maxlength="180" required></textarea>
+          </label>
+        </section>
+
+        <section class="privacy">
+          <h2>Privacy posture</h2>
+          <p>Usage totals, sites, and purposes stay in Chrome storage on this device. There are no accounts, remote analytics, ads, or external API calls.</p>
+        </section>
+
+        <div class="actions">
+          <button type="submit">Save settings</button>
+          <button id="reset-usage" type="button" class="secondary">Reset today</button>
+        </div>
+
+        <p id="status" role="status" aria-live="polite"></p>
+      </form>
+    </main>
+
+    <script type="module" src="src/options.js"></script>
+  </body>
+</html>

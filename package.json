@@ -1,0 +1,11 @@
+{
+  "name": "slopathon-ai-time-limiter",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node scripts/check-extension.js",
+    "icons": "node scripts/generate-icons.js",
+    "test": "node --test"
+  }
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Time Limiter</title>
+    <link rel="stylesheet" href="styles/popup.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <span>AI Time Limiter</span>
+        <strong id="remaining">--</strong>
+      </header>
+
+      <section class="today">
+        <div>
+          <span>Used today</span>
+          <strong id="used">00:00</strong>
+        </div>
+        <div>
+          <span>Mode</span>
+          <strong id="mode">Normal</strong>
+        </div>
+      </section>
+
+      <section>
+        <h1>This week</h1>
+        <div id="bars" class="bars"></div>
+        <p id="summary"></p>
+      </section>
+
+      <section>
+        <h1>Tracked AI sites</h1>
+        <p id="sites"></p>
+      </section>
+
+      <div class="actions">
+        <button id="open-options" type="button">Settings</button>
+        <button id="reset-today" class="secondary" type="button">Reset today</button>
+      </div>
+    </main>
+    <script type="module" src="src/popup.js"></script>
+  </body>
+</html>
